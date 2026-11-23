@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Blog LaTeX Copy",
+  "version": "1.0.0",
+  "description": "Copy selected text and original MathJax or KaTeX equations together with Ctrl+C.",
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js": [
+        "copy.js"
+      ],
+      "run_at": "document_start",
+      "world": "MAIN"
+    }
+  ]
+}
