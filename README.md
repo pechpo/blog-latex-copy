@@ -1,31 +1,33 @@
 # Blog LaTeX Copy
 
-在网页上框选一段包含公式的正文，按 `Ctrl+C`（macOS 上按 `⌘C`），即可把正文和原始 LaTeX 一起复制到剪贴板。适合整理含有多条公式的博客段落和学习笔记。
+**English** · [简体中文](README.zh-CN.md)
 
-## 安装
+Select a passage with equations on a webpage and press `Ctrl+C` (`Command+C` on macOS) to copy the text and original LaTeX together. This works for selections that span multiple equations.
 
-1. 在 GitHub 仓库页面选择 **Code → Download ZIP**，下载并解压。
-2. 在 Edge 打开 `edge://extensions`，或在 Chrome 打开 `chrome://extensions`，开启 **开发人员模式**。
-3. 点击 **加载解压缩的扩展**，选中直接包含 `manifest.json` 的文件夹。
-4. 刷新已经打开的目标网页。
+## Installation
 
-## 使用
+1. On the GitHub repository page, select **Code → Download ZIP** and extract the archive.
+2. Open `edge://extensions` in Edge or `chrome://extensions` in Chrome and turn on **Developer mode**.
+3. Click **Load unpacked** and select the folder that directly contains `manifest.json`.
+4. Refresh any pages you already have open where you want to use the extension.
 
-等公式渲染完成后，框选任意一段正文和公式，再用平常的复制快捷键。复制结果是纯文本，保留段落换行。行内公式使用 `$...$`，独立公式使用 `$$...$$`。
+## Usage
+
+Wait for the equations to render, select the text and equations you want, then use your usual copy shortcut. The clipboard gets plain text with paragraph breaks. Inline equations use `$...$`, and display equations use `$$...$$`.
 
 ```text
-圆的面积公式是 $A = \pi r^2$，其中 $r$ 是半径。
+The area of a circle is $A = \pi r^2$, where $r$ is the radius.
 
-单位圆的面积为
+The area of the unit circle is
 
 $$
 A = \pi \cdot 1^2 = \pi
 $$
 ```
 
-## 支持范围
+## Supported pages
 
-- MathJax 页面通过 MathJax 的运行时读取 TeX 源码。已在 Edge 上用 MathJax 4.0.0 验证过一次复制跨越 8 条公式的选区。
-- KaTeX 页面需要在公式节点中保留 LaTeX 源码标注。
-- 公式图片、截图和 PDF 内的公式需要其他识别工具。
-- 扩展在普通 HTTP/HTTPS 网页上运行，复制处理在浏览器本地完成。选区里没有可识别公式时，沿用浏览器的普通复制行为。
+- The extension reads TeX source from the MathJax runtime. It was tested in Edge on a MathJax 4.0.0 page with a selection spanning eight equations.
+- KaTeX pages need to retain the LaTeX source in an annotation on the equation.
+- Equations in images, screenshots, and PDFs require a separate recognition tool.
+- The extension runs on HTTP and HTTPS webpages and handles copying locally in the browser. If the selection contains no recognizable equations, the browser copies it as usual.
